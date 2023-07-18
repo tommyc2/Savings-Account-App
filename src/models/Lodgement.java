@@ -1,13 +1,14 @@
 package models;
+
 import utils.Utilities;
 
 public class Lodgement {
 
-    int year = 2023;
-    int month = 1;
-    int day = 1;
-    int weekNumber = 1;
-    double amount = 0;
+    private int year = 2023;
+    private int month = 1;
+    private int day = 1;
+    private int weekNumber = 1;
+    private double amount = 0;
 
     public Lodgement(int weekNumber, int year, int month, int day, double amount) {
         setDay(day);
@@ -27,8 +28,9 @@ public class Lodgement {
     public double getAmount() {
         return amount;
     }
+
     public void setAmount(double amount) {
-        if (amount >= 0){
+        if (amount >= 0) {
             this.amount = amount;
         }
     }
@@ -38,7 +40,7 @@ public class Lodgement {
     }
 
     public void setYear(int year) {
-        if (year == 2023){
+        if (year == 2023) {
             this.year = year;
         }
     }
@@ -48,7 +50,7 @@ public class Lodgement {
     }
 
     public void setMonth(int month) {
-        if (Utilities.validRange(month,1,12)){
+        if (Utilities.validRange(month, 1, 12)) {
             this.month = month;
         }
     }
@@ -56,30 +58,32 @@ public class Lodgement {
     public int getDay() {
         return day;
     }
+
     public void setDay(int day) {
-        if (Utilities.validRange(day,1,31)){
+        if (Utilities.validRange(day, 1, 31)) {
             this.day = day;
         }
     }
+
     public int getWeekNumber() {
         return weekNumber;
     }
+
     public void setWeekNumber(int weekNumber) {
-        if (weekNumber > 0){
+        if (weekNumber > 0) {
             this.weekNumber = weekNumber;
         }
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         String format = "";
 
         format += "---- Lodgement ------" + "\n";
         format += "| Date: " + this.day + "/" + this.month + "/" + this.year + "\n";
         format += "| Week: " + this.weekNumber + "\n";
-        format += "| Amount: " + this.amount + "\n";
-        format += "---------------------\n\n";
+        format += "| Amount: " + "€" + this.amount + "\n";
+        format += "---------------------";
 
         return format;
     }
